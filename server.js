@@ -9,7 +9,8 @@ server.use(express.json());
 server.use('/api/posts', dbRouter);
 
 server.get('/', (req, res) => {
-    res.send('This api is running!')
+    const messageOfTheDay = process.env.MOTD;
+    res.send({motd: messageOfTheDay});
 })
 
 module.exports = server;
