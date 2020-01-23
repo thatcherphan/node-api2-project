@@ -10,7 +10,7 @@ server.use('/api/posts', dbRouter);
 
 server.get('/', (req, res) => {
     const messageOfTheDay = process.env.MOTD;
-    res.send({motd: messageOfTheDay});
+    res.send({motd: messageOfTheDay, message: "this server is alive!"});
 })
 
 module.exports = server;
